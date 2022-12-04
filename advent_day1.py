@@ -19,10 +19,10 @@ with open('input1.txt', 'r') as fd:
             total_calories.append(count)
             count = 0
 
-#Part 1 Answer
+# Part 1 Answer
 print(max(total_calories))
 
 total_calories.sort(reverse=True)
 
-#Part 2 Answer 
+# Part 2 Answer 
 print(sum(total_calories[0:3]))
