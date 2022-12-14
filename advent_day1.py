@@ -24,6 +24,8 @@ with open('input1.txt', 'r') as fd:
 Part 1
 """
 start = time.time()
+
+# Part 1 Answer
 part1 = max(total_calories)
 print('Part 1: ', part1,'\n')
 
@@ -31,5 +33,7 @@ print('Part 1: ', part1,'\n')
 Part 2
 """
 total_calories.sort(reverse=True)
+
+# Part 2 Answer
 part2 = sum(total_calories[0:3])
 print('Part 2: ', part2,'\nTotal time:', (time.time()-start),' seconds')

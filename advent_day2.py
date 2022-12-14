@@ -7,7 +7,7 @@ Created on Fri Dec  2 11:05:12 2022
 13484
 """
 
-import csv
+import csv, time
 
 scores, points, win = {"W":6, "D":3, "L":0}, {"X":1, "Y": 2, "Z":3}, {"X":"Z", "Y":"X", "Z":"Y"}
 # Look up for Part 1 and 2
@@ -24,6 +24,7 @@ with open('input2.txt', 'r') as fd:
 """
 Part 1
 """
+start = time.time()
 score = 0
 
 for row in file:
@@ -39,7 +40,7 @@ for row in file:
         score += scores["W"]
 
 # Part 1 Answer
-print(score)
+print('Part 1: ', score,'\n')
 
 """
 Part 2
@@ -60,4 +61,5 @@ for row in file:
         score += points[lose[elf]]
 
 # Part 2 Answer
-print(score)
+print('Part 2: ', score,'\nTotal time:', (time.time()-start),' seconds')
+
