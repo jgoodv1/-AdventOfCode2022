@@ -58,22 +58,22 @@ def calcscenicscore(row, col, size):
     visible, count = checkcol(reversed(range(0,row)), col, size)
     totalcount = count
     if visible == True:
-        return totalcount
+        return True
 
     visible, count = checkcol(range(row+1, tree_row), col, size)
     totalcount *= count
     if visible == True:
-        return totalcount
+        return True
 
     visible, count = checkrow(reversed(range(0, col)), row, size)
     totalcount *= count
     if visible == True:
-        return totalcount
+        return True
 
     visible, count = checkrow(range(col+1, tree_col), row, size)
     totalcount *= count
     if visible == True:
-        return totalcount
+        return True
 
     return totalcount
 
@@ -102,6 +102,7 @@ def checkcol(range, col, size):
         if int(forest[r,col]) >= int(size):
             return False, count
     return True, count
+
 
 print(countvisible())
 print(getmaxsorce())
