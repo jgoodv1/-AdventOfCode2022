@@ -5,6 +5,8 @@ Created on Sun Dec  4 10:46:06 2022
 
 @author: jonathangood
 """
+import time
+start = time.time()
 
 def createarray(values):
     y = int(values.split('-')[0])
@@ -16,8 +18,8 @@ def createarray(values):
         
     return result
 
-count_a = 0
-count_b = 0
+part1 = 0
+part2 = 0
 
 import csv
 with open('input4.txt', 'r') as fd:
@@ -32,14 +34,15 @@ with open('input4.txt', 'r') as fd:
         Part 1
         """
         if len(overlap) == len(elf1) or len(overlap) == len(elf2):
-            count_a += 1
+            part1 += 1
         """
         Part 2
         """
         if len(overlap) > 0:
-            count_b += 1
+            part2 += 1
 
-# Part 1 Answer   
-print(count_a)
+# Part 1 Answer
+print('Part 1: ', part1)
+
 # Part 2 Answer
-print(count_b)
+print('Part 2: ', part2,'\nTotal time:', (time.time()-start),' seconds')
