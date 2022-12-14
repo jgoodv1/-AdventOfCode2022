@@ -5,6 +5,7 @@ Created on Thu Dec  1 11:43:05 2022
 
 @author: jonathangood
 """
+import time
 
 total_calories = []
 count = 0
@@ -19,10 +20,16 @@ with open('input1.txt', 'r') as fd:
             total_calories.append(count)
             count = 0
 
-# Part 1 Answer
-print(max(total_calories))
+"""
+Part 1
+"""
+start = time.time()
+part1 = max(total_calories)
+print('Part 1: ', part1,'\n')
 
+"""
+Part 2
+"""
 total_calories.sort(reverse=True)
-
-# Part 2 Answer 
-print(sum(total_calories[0:3]))
+part2 = sum(total_calories[0:3])
+print('Part 2: ', part2,'\nTotal time:', (time.time()-start),' seconds')
